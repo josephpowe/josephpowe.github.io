@@ -37,16 +37,16 @@
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
         // example: 
-        createCollectable(type.steve, 200, 170, 6,0.7);
-        createCollectable(type.db, 400, 345, 6, 0.7);
-        createCollectable(type.kennedi, 300, 210, 6, 0.7);
-        createCollectable(type.max, 600, 450, 5, 0.7);
-        createCollectable(type.grace,1000,350,6,0.7);
-        createCollectable(type.steve,904,400,6,0.7);
+        createCollectable(type.steve, 200, 170, 6,1);
+        createCollectable(type.db, 400, 345, 6, 1);
+        createCollectable(type.kennedi, 300, 210, 6, 1);
+        createCollectable(type.max, 600, 450, 6, 1);
+        createCollectable(type.grace,1000,350,6,1);
+        createCollectable(type.steve,904,400,6,1);
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     };
     collectable.init = init;
 })(window);
-//olooooooooooooooooooo
+//ok
