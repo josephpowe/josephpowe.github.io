@@ -37,9 +37,10 @@
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
         // example: 
-       createCollectable(type.grace,150,75,6,0.7);
-       createCollectable(type.bruh, 175,100,6,1);
-        // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
+       createCollectable(type.grace, 150,200,6,1);
+       createCollectable(type.max,700,450,6,1);
+       createCollectable(type.steve,450,300,6,1);
+        // AL  L YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     };
     collectable.init = init;
