@@ -26,7 +26,7 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2); // draws the circle and stores it in the variable circle
-            physikz.addRandomVelocity(circle, canvas,20,20);//adds a random velocity to the circle
+            physikz.addRandomVelocity(circle, canvas,45,20);//adds a random velocity to the circle
             view.addChild(circle);
             circles.push(circle);// pushes that single circle to the array circles
         }
@@ -34,15 +34,17 @@ var init = function (window) {
 
         // TODO 3 / 8 : Call the drawCircle() function 
        /*
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-       */ 
-        for( var loopsCompleted = 0; loopsCompleted < 10; loopsCompleted++){
-            
-        }
+       drawCircle();
+       drawCircle();
+       drawCircle();
+       drawCircle();
+       drawCircle();
+       */
+      
+       for(var i = 0; i <= 100; i++){
+           drawCircle();
+       }
+    
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -67,10 +69,12 @@ var init = function (window) {
            game.checkCirclePosition(circles[4]);
 
             // TODO 9 : Iterate over the array
-           
-            
+           for (var k = 0; k <= circle.length; k++) {
+            physikz.updatePosition(circles[k])
+            game.checkCirclePosition(circles[k]);
+
+           }
         }
-    
         /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
