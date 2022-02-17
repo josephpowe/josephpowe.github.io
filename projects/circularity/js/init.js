@@ -15,18 +15,18 @@ var init = function (window) {
         window.opspark.game = {};
         var game = window.opspark.game;
         
-        ////////////////////////////////////////////////////////////
-        ///////////////// PROGRAM SETUP ////////////////////////////
-        ////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////
+        // ALL CODE GOES BELOW HERE                                   //
+        ////////////////////////////////////////////////////////////////
         
-        // TODO 1 : Declare and initialize our variables
+        // TODO 1 : Declare and initialize our variables //
         var circle; //declared variable circle. left undefined. will use later to hold individual circle.
         var circles = []; //empty array waiting to hold circles
 
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2); // draws the circle and stores it in the variable circle
-            physikz.addRandomVelocity(circle, canvas,45,20);//adds a random velocity to the circle
+            physikz.addRandomVelocity(circle, canvas,10,10);//adds a random velocity to the circle
             view.addChild(circle);
             circles.push(circle);// pushes that single circle to the array circles
         }
@@ -37,6 +37,8 @@ var init = function (window) {
         for(var i = 0; i <= 100; i++){
            drawCircle();
        }
+
+       
     
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -62,7 +64,7 @@ var init = function (window) {
             game.checkCirclePosition(circles[4]);
         */      
             // TODO 9 : Iterate over the array
-           for (var k = 0; k <= circles.length; k++) {
+           for (var k = 0; k < circles.length; k++) {
             physikz.updatePosition(circles[k]);
             game.checkCirclePosition(circles[k]);
            }
@@ -94,12 +96,9 @@ var init = function (window) {
             // YOUR TODO 7 CODE ENDS HERE //////////////////////////
         }
         
-        /////////////////////////////////////////////////////////////
-        // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
-        /////////////////////////////////////////////////////////////
-        
-        view.addChild(fps);
-        app.addUpdateable(fps);
+               ////////////////////////////////////////////////////////////////////
+        // NO CODE BELOW HERE                                             //
+        ////////////////////////////////////////////////////////////////////
         
         game.circle = circle;
         game.circles = circles;
