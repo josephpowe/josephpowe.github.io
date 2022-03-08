@@ -38,7 +38,7 @@ var background = function (window) {
             // TODO: 2 - Part 2
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,groundY,'black');
+            var backgroundFill = draw.rect(canvasWidth,groundY,'red');
             background.addChild(backgroundFill);
             
             // TODO: 3 - Add a moon and starfield
@@ -96,7 +96,13 @@ var background = function (window) {
 }
             
             // TODO 5: Part 2 - Roblox
-            
+            //loops the building and moves them to the left by 0.5 pixels
+            for (var i = 0; i < buildings.length; i++){
+                buildings[i].x = buildings[i].x - 0.5; //moves the building's x position by .5 pixels
+                if(buildings[i].x < 0) { // checks to see if the building's x position is off the left side and if it is it resets the position 
+                    buildings[i].x = canvasWidth;
+                }
+            }
 
         } // end of update function - DO NOT DELETE
         
