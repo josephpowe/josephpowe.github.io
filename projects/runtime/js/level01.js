@@ -27,12 +27,17 @@ var level01 = function (window) {
                 { "type": "reward", "x": 1000, "y": groundY-50},
                 { "type": "reward", "x": 1100, "y": groundY-50},
                 { "type": "reward", "x": 1200, "y": groundY-50},
+
+                { "type": "haha", "x": 1300, "y": groundY-45},
+                { "type": "haha", "x": 1350, "y": groundY-50},
+                { "type": "haha", "x": 1400, "y": groundY-45},
+
             ]
         };
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
         game.setDebugMode(true);
-
+        
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
 
@@ -48,7 +53,7 @@ var level01 = function (window) {
             sawBladeHitZone.addChild(obstacleImage);//add the image to the hitzone so we can see it      
             obstacleImage.x = -25; //tweaks the image 25 pixels to the left
             obstacleImage.y = -25; //tweaks the image 25 pixels up
-    
+            
         }
         
 function createEnemy(x,y){
@@ -97,6 +102,29 @@ function createReward(x,y){
         reward.fadeOut();
     };
 }
+    function createHaha(x,y){
+        var haha = game.createGameItem('haha',25);//creating the game item and storing it in the variable enemy
+        var yellowSquare = draw.rect(50,50,'yellow');//creates rectangle and stores as redSquare
+        yellowSquare.x = -25;
+        yellowSquare.y = -25;
+        haha.addChild(yellowSquare);//add the redsquare to the enemy game item
+
+        haha.x = x;
+        haha.y = y;
+
+        game.addGameItem(haha);//adds uncontrolable laughing to the game
+
+        haha.velocityX = -1;//causes the laughing to never stop 
+        
+        haha.rotationalVelocity = 10;
+
+        haha.onPlayerCollision = function() {
+            console.log('cant stop laugh ahahahahaha');
+            game.changeIntegrity(5);
+            game.increaseScore(10);
+            haha.fadeOut();
+        };
+    }
         
         for(var i = 0;i < levelData.gameItems.length; i++){
        var gameItem = levelData.gameItems[i];
@@ -113,7 +141,10 @@ function createReward(x,y){
         createReward(gameItem.x, gameItem.y);
        }
         }
-        
+       if(gameItem.type === "haha"){
+           createHaha(gameItem.x, gameItem.y);
+       } 
+       
         // DO NOT EDIT CODE BELOW HERE
     }
 };

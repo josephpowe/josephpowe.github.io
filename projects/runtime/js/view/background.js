@@ -49,7 +49,7 @@ var background = function (window) {
                 circle.y = groundY*Math.random();//// multiplies groundY * a random decimal between .1 and .99 and assigns it to circle.y
                 background.addChild(circle); //adds the stars to the background
             }
-
+                
 
             var moon = draw.bitmap('img/moon.png'); //created a variable called moon. draw.bitmap draws the image and draws the image and stores it in
             moon.x = canvasWidth - 300;//moon.x moves the moon horizontally
